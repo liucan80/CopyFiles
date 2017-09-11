@@ -25,6 +25,7 @@
         <Button Content="选取目标文件路径" HorizontalAlignment="Left" Margin="32,129,0,0" VerticalAlignment="Top" Width="101" Click="Button_Click_4" Grid.ColumnSpan="2" Grid.Column="2"/>
         <TextBox x:Name="TBTargetFolderPath" HorizontalAlignment="Left" Height="22" Margin="71,123,0,0" TextWrapping="Wrap" Text="待选取" VerticalAlignment="Top" Width="259" TextChanged="TextBox_TextChanged" Grid.ColumnSpan="3"/>
         <Button x:Name="StartProcessing" Content="开始" HorizontalAlignment="Left" Margin="32,267,0,0" VerticalAlignment="Top" Width="101" Click="Button_Click_2" Grid.Column="2" Grid.ColumnSpan="2"/>
+        <Button Content="check" Grid.Column="2" HorizontalAlignment="Left" Margin="32,329,0,0" VerticalAlignment="Top" Width="101" Grid.ColumnSpan="2" Click="Button_Click_5"/>
 
     </Grid>
 </Window>

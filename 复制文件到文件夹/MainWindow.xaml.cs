@@ -127,5 +127,49 @@ namespace 复制文件到文件夹
             
             //br1.
         }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            excelApp = new Microsoft.Office.Interop.Excel.Application();
+            excelApp.Visible = true;
+            workbook1 = excelApp.Workbooks.Open(filepath.Text);
+            worksheet1 = workbook1.ActiveSheet;
+            while (!Equals(((Range)worksheet1.Cells[n, 1]).Text, ""))
+            {
+                string a = ((Range)worksheet1.Cells[n, 1]).Text;
+                names.Add(a);
+                n++;
+            }
+            TBLog.Clear();
+            foreach (var name in names)
+            {
+                var temp = false;
+
+                foreach (var file in AllFileNames)
+                {
+                    if (file.Contains(name))
+                    {
+                        //FileInfo fi1 = new FileInfo(file);
+                        // fi1.CopyTo(TBTargetFolderPath+@"\" + System.IO.Path.GetFileName(file));
+                        var a = System.IO.Path.GetFileName(file);
+                        var b = TBTargetFolderPath.Text + @"\" + a;
+                       // System.IO.File.Copy(file, b, true);
+                        temp = true;
+
+
+                    }
+
+                }
+                if (!temp)
+                {
+
+                    i++;
+                    TBLog.AppendText(i + ":" + name + "未找到\n");
+                    //System.Windows.MessageBox.Show(i + ":" + name + "未找到\n");
+                }
+
+
+            }
+        }
     }
 }
